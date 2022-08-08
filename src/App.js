@@ -6,20 +6,21 @@ import Other from './Other'
 
 function App() {
   const [user, setUser] = useState("John");
-  // const changeName = () => {
-  //   setUser("Harry");
-  // }
-  // changeName();
+  const [age, setAge] = useState("55");
+  const [character, setCharacter] = useState ("Goody")
   return (
     <div className="App">
-      <h1>Alex</h1>
       <h1>Fred</h1>
       <h1>George</h1>
       <Other />
-          <Box personsname="Sirius" age ="58" character="goody" />
-      <Box personsname="Hagrid" age = "49" character="goody" />
-      <Box personsname={user} age="70" character="baddie" />
 
+      <Box personsname={user} age={age} character={character} />
+      <br></br>
+      <input onChange={(event) => setUser(event.target.value)} />
+      <br></br>
+      <input onChange={(event) => setAge(event.target.value)} />
+      <br></br>
+      <input onChange={(event) => setCharacter(event.target.value)} />
     </div>
   );
 }
